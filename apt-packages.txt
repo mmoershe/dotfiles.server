@@ -1,0 +1,10 @@
+git
+gh
+cpufetch
+duf
+btop
+wget
+bat
+stress
+fastfetch
+lazygit
