@@ -6,6 +6,8 @@ stow_all() {
     SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
     BASE_DIR="$SCRIPTS_DIR/.."
 
+    rm -f ~/.bashrc
+
     cd "$BASE_DIR/stow_packages" && stow --verbose --target ~ */
 
     echo "[✓] Stowing dotfiles..."
