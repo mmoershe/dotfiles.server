@@ -3,6 +3,14 @@
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCRIPTS_DIR="$BASE_DIR/scripts"
 
+if [[ -f /etc/os-release ]] && grep -qi '^ID=debian' /etc/os-release && ! command -v gum &>/dev/null; then
+    read -rp "gum is not installed. Install it now? [y/N] " install_gum_answer
+    if [[ "$install_gum_answer" =~ ^[Yy]$ ]]; then
+        source "$SCRIPTS_DIR/install_gum.sh"
+        install_gum
+    fi
+fi
+
 options=(
     "update"
     "install packages"
