@@ -9,3 +9,4 @@ stress
 fastfetch
 lazygit
 stow
+needrestart
